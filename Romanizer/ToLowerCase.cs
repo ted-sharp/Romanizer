@@ -9,13 +9,11 @@ namespace Romanizer
     {
         public string Transform(string input)
         {
-            return Transform(input, null);
+            return Transform(input, CultureInfo.CurrentCulture);
         }
 
         public string Transform(string input, CultureInfo culture)
         {
-            culture ??= CultureInfo.CurrentCulture;
-
             return culture.TextInfo.ToLower(input);
         }
     }
